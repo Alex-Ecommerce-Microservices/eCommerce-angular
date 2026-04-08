@@ -1,0 +1,41 @@
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.cproject
+.settings/
+/.vscode/*
+!/.vscode/extensions.json
+!/.vscode/launch.json
+!/.vscode/settings.json
+!/.vscode/tasks.json
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Angular cache
+/.angular/cache
+
+# Environment files
+src/environments/environment.prod.ts
+# Note: Sometimes it's better to keep the template and ignore local secrets
+# src/environments/environment.local.ts
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+/coverage
+/reports
