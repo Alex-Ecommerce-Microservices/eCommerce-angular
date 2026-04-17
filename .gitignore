@@ -27,7 +27,7 @@ Thumbs.db
 /.angular/cache
 
 # Environment files
-src/environments/environment.prod.ts
+#src/environments/environment.prod.ts
 # Note: Sometimes it's better to keep the template and ignore local secrets
 # src/environments/environment.local.ts
 
