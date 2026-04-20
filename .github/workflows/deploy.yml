@@ -16,12 +16,20 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+     
+      # BƯỚC QUAN TRỌNG 1: Cài đặt bộ giả lập để build ARM trên máy Intel
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
 
-# ... (Phần trigger và login Docker Hub giống backend)
+      # BƯỚC QUAN TRỌNG 2: Cài đặt Docker Buildx (công cụ build đa nền tảng)
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
+          platforms: linux/amd64,linux/arm64 # Ép GitHub build cho cả 2 chip
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/angular-frontend:latest
