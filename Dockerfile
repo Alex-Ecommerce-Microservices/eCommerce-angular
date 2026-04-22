@@ -1,8 +1,15 @@
 # Stage 1: Build
 FROM node:16-alpine AS build
 WORKDIR /app
+
+# BƯỚC QUAN TRỌNG: Cài đặt build tools cho Alpine
+RUN apk add --no-cache python3 make g++
+
+
 COPY package*.json ./
-RUN npm install
+# Dùng npm ci thay vì npm install để đảm bảo tính ổn định (Senior Tip)
+RUN npm ci
+
 COPY . .
 RUN npm run build -- --configuration production
 
