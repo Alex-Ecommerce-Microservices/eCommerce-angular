@@ -3,7 +3,7 @@ FROM node:16-alpine AS build
 WORKDIR /app
 
 # BƯỚC QUAN TRỌNG: Cài đặt build tools cho Alpine
-RUN apk add --no-cache python3 make g++
+#RUN apk add --no-cache python3 make g++
 
 
 COPY package*.json ./
@@ -25,5 +25,5 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY ssl-localhost/localhost.crt /etc/nginx/ssl/localhost.crt
 COPY ssl-localhost/localhost.key /etc/nginx/ssl/localhost.key
 
-EXPOSE 80 8443
+EXPOSE 80 443
 CMD ["nginx", "-g", "daemon off;"]

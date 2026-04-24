@@ -18,8 +18,8 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
      
       # BƯỚC QUAN TRỌNG 1: Cài đặt bộ giả lập để build ARM trên máy Intel
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
+      # - name: Set up QEMU
+      #   uses: docker/setup-qemu-action@v3
 
       # BƯỚC QUAN TRỌNG 2: Cài đặt Docker Buildx (công cụ build đa nền tảng)
       - name: Set up Docker Buildx
