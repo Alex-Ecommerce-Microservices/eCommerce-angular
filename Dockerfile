@@ -25,5 +25,5 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY ssl-localhost/localhost.crt /etc/nginx/ssl/localhost.crt
 COPY ssl-localhost/localhost.key /etc/nginx/ssl/localhost.key
 
-EXPOSE 80 443
+EXPOSE 80 8443
 CMD ["nginx", "-g", "daemon off;"]
